@@ -1,34 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
+![test](https://raw.githubusercontent.com/bradgarropy/next-seo/HEAD/images/github.png)
+## ✅ 1_install next with typescript
 ```bash
-npm run dev
+npx create-next-app@latest --ts
 # or
-yarn dev
+yarn create next-app --typescript
+# or
+pnpm create next-app --ts
+
+```
+## ✅ 2_install package nextseo
+```bash
+npm i next-seo
+```
+## ✅ 3_add this code a new file <next-seo.config>  
+```bash
+export default {
+  title: "your title",
+  description: "your description",
+  canonical: "https://www.canonical.ie/",
+  openGraph: {
+    url: "https://www.url.ie/a",
+    title: "Open Graph Title",
+    description: "Open Graph Description",
+    images: [
+      {
+        url: "https://www.example.ie/og-image-01.jpg",
+        width: 800,
+        height: 600,
+        alt: "Og Image Alt",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://www.example.ie/og-image-02.jpg",
+        width: 900,
+        height: 800,
+        alt: "Og Image Alt Second",
+        type: "image/jpeg",
+      },
+      { url: "https://www.example.ie/og-image-03.jpg" },
+      { url: "https://www.example.ie/og-image-04.jpg" },
+    ],
+    site_name: "SiteName",
+  },
+  twitter: {
+    handle: "@handle",
+    site: "@site",
+    cardType: "summary_large_image",
+  },
+};
+
+```
+## ✅ 4_and run server 
+```bash
+yarn run dev 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
